@@ -21,7 +21,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(2000, 800);
+  createCanvas(1700, 700);
   notificationX = (width - notificationWidth) / 2;
   notificationY = -notificationHeight;
 
