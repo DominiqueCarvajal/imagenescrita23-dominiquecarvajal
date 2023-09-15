@@ -21,7 +21,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1000, 500);
+  createCanvas(windowWidth, windowHeight);
   notificationX = (width - notificationWidth) / 2;
   notificationY = -notificationHeight;
 
@@ -57,13 +57,13 @@ function draw() {
 
     let contentX = notificationX;
     let contentY = notificationY;
-    let contentWidth = notificationHeight * 0.3; // Cambia el ancho de la imagen
-    let contentHeight = notificationHeight * 0.3; // Cambia la altura de la imagen
+    let contentWidth = notificationHeight * 0.3;
+    let contentHeight = notificationHeight * 0.3;
 
     image(contentImage, contentX + 10, contentY + (notificationHeight - contentHeight) / 2, contentWidth, contentHeight);
 
     fill(0);
-    textSize(16); // Cambia el tamaño de la fuente
+    textSize(16);
     textAlign(CENTER, CENTER);
     text("Fuerte lluvia en...Kushiro Shitsugen Noriko-go.                                       Suprefectura de Kushiro, Hokkaidō...", notificationX + contentWidth + 20, notificationY, notificationWidth - contentWidth - 20, notificationHeight);
   }
@@ -79,4 +79,9 @@ function showNotification() {
 
 function mouseClicked() {
   showNotification();
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  notificationX = (width - notificationWidth) / 2;
 }
